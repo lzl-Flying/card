@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>jq1</title>
+    <style>
+    .wopper{
+        width: 400px;
+        height: 500px;
+        background: #fcc;
+    }
+    button {
+        width: 100px;
+        height: 50px;
+        margin: 10px;
+    }
+    .bc {
+        background: orange;
+    }
+    .content div{
+        display: none;
+        width: 300px;
+        height: 300px;
+        background: red;
+        margin: 50px;
+        text-align: center;
+        font-size: 50px;
+        font-weight: bold;
+        line-height: 300px;
+    }
+    .content .active{
+        display: block;
+    }
+    </style>
+</head>
+<body>
+
+    <!-- <div class="wapper">
+        <div>
+            <span id="demo">1</span>
+        </div>
+        <div>2</div>
+        <div>3</div>
+        <div>
+            <span>4</span>
+        </div>
+        <div>5</div>
+    </div> -->
+
+    <!-- <ul class="demo">
+        <li class="two">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul> -->
+
+    <div class="wopper">
+        <div class="btn">
+            <button>one</button>
+            <button>two</button>
+            <button>three</button>
+        </div>
+        <div class="content">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+
+    </div>
+
+
+    <script src="./jQuery-3.3.1.js"></script>
+    <script>
+        //console.log($('.two'));
+        //console.log($('ul>li:eq(2)'));
+        //console.log($('ul>li:even'));//odd
+
+        // $('ul>li').filter(function(index) {
+        //     return index % 3;
+        // }).css('background','red');
+        //$('ul li').find('a').css('background','red');
+
+        
+        // $('ul li').click(function(){
+        //     console.log($(this).html());
+        // });
+
+        
+        //选项卡功能
+        $('.content div').eq(0).addClass('active');
+        $('button').eq(0).addClass('bc');
+        $('button').click (function () {
+            var aa = $(this).index();
+            console.log(aa);
+            $('button').removeClass();
+            $('button').eq(aa).addClass('bc');
+            $('.content div').removeClass();
+            $('.content div').eq(aa).addClass('active');
+        })
+        
+
+
+    </script>
+
+
+    
+</body>
+</html>
